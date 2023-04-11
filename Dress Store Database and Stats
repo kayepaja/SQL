@@ -1,0 +1,48 @@
+--Create a Dress Store Dataase
+
+CREATE TABLE Store (
+    id INTEGER PRIMARY KEY,
+    Category TEXT,
+    Item TEXT,
+    Amount_Purchased INTEGER,
+    Cost INTEGER);
+
+INSERT INTO Store VALUES
+    (1, 'Shoes', 'Flats', 5, 20.50),
+    (2, 'Clothes', 'Summer Dress', 34, 85.50),
+    (3, 'Clothes', 'Spring Dress', 28, 75),
+    (4, 'Jewelry', 'Gold Nacklace',15, 125.50),
+    (5,'Jewelry', 'Silver Ring', 1, 35.99),
+    (6,'Miscellaneous', 'Gift Card', 4,50.00),
+    (7, 'Shoes', 'Summer Sandals',7,30.35),
+    (8, 'Clothes', 'Formal Dress',3, 150.25),
+    (9, 'Shoes', 'Wedges', 1, 28.54),
+    (10, 'Jewelry', 'Tiara', 1, 885.50),
+    (11, 'Jewelry', 'White Gold Bracelet', 5, 143.50),
+    (12, 'Jewelry', 'White Gold Necklace', 8, 256.78),
+    (13, 'Clothes', 'Winter Dress', 2, 129.89),
+    (14, 'Shoes', 'Heels', 18, 45),
+    (15, 'Jewelry', 'Gold Rings', 3, 99.87),
+    (16, 'Clothes', 'Prom Dress', 2, 299.99)
+    ;
+ 
+ --Display the database ordered by cost.
+SELECT * FROM Store 
+ORDER BY cost DESC;
+
+--What is the Sum of the Stores cost?
+SELECT SUM(cost) FROM Store;
+
+--What is the Store's most Popular Items?
+SELECT Item, Amount_Purchased, Cost FROM Store 
+ORDER BY Amount_Purchased DESC 
+LIMIT 10;
+
+--What is the most popular jewelry?
+SELECT Category, Item, Amount_Purchased, Cost FROM Store
+WHERE Category = 'Jewelry'
+ORDER BY Amount_Purchased DESC;
+
+
+ 
+
